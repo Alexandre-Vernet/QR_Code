@@ -3,17 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="bottom"
-    android:orientation="vertical"
     tools:context=".MainActivity">
-
-    <Button
-        android:id="@+id/btnScanner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="30dp"
-        android:text="Ouvrir l'appareil photo"
-        android:textAlignment="center"
-        android:textSize="20sp" />
 
 </LinearLayout>
