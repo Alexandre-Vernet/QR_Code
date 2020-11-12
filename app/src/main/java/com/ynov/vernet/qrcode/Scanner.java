@@ -1,12 +1,16 @@
 package com.ynov.vernet.qrcode;
 
 import android.Manifest;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.budiyev.android.codescanner.CodeScanner;
@@ -35,7 +39,22 @@ public class Scanner extends AppCompatActivity {
         codeScanner = new CodeScanner(this, scannView);
         resultData = findViewById(R.id.resultsOfQr);
 
-        codeScanner.setDecodeCallback(result -> runOnUiThread(() -> resultData.setText(result.getText())));
+        codeScanner.setDecodeCallback(result -> runOnUiThread(() -> {
+
+            AlertDialog alertDialog = new AlertDialog.Builder(this)
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .setTitle("Ouvrir le lien ?")
+                .setMessage(result.getText())
+                .setPositiveButton("Oui", (dialogInterface, i) -> {
+                    Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(result.getText()));
+                    startActivity(browserIntent);
+                })
+                .setNegativeButton("Non", (dialogInterface, i) -> {
+                    requestForCamera();
+                })
+                .show();
+            alertDialog.setCanceledOnTouchOutside(false);
+        }));
 
         scannView.setOnClickListener(v -> codeScanner.startPreview());
     }
