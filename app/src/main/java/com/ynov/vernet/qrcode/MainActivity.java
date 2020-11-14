@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Démarrer le scanner
         Intent intent = new Intent(getApplicationContext(), Scanner.class);
         startActivity(intent);
         finish();
