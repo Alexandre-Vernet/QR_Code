@@ -11,7 +11,7 @@
         android:roundIcon="@drawable/qr"
         android:supportsRtl="true"
         android:theme="@style/Theme.QRCode">
-        <activity android:name=".Scanner"></activity>
+        <activity android:name=".Scanner" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

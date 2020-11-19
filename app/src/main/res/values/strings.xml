@@ -1,3 +1,13 @@
 <resources>
-    <string name="app_name">QR Code</string>
+    <string name="app_name" translatable="false">QR Code</string>
+    <string name="erreur">Error</string>
+    <string name="besoin_autorisation_camera">The app needs to access camera</string>
+    <string name="autoriser">Allow</string>
+    <string name="quitter">Leave</string>
+    <string name="ouvrir_lien">Open the link ?</string>
+    <string name="oui">Yes</string>
+    <string name="non">No</string>
+    <string name="resultat">Result</string>
+    <string name="ok">Ok</string>
+    <string name="application_n_a_pas_acces_camera">The app does not have access to the camera</string>
 </resources>

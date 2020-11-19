@@ -33,13 +33,12 @@ public class MainActivity extends AppCompatActivity {
             // Afficher une boîte de dialogue
             AlertDialog alertDialog = new AlertDialog.Builder(this)
                     .setIcon(android.R.drawable.ic_dialog_alert)
-                    .setTitle("Erreur")
-                    .setMessage("L'application a besoin d'une ou plusieurs permissions")
-                    .setPositiveButton("Autoriser", (dialogInterface, i) -> ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, 0))
-                    .setNegativeButton("Quitter", (dialogInterface, i) -> finish())
+                    .setTitle(R.string.erreur)
+                    .setMessage(R.string.besoin_autorisation_camera)
+                    .setPositiveButton(R.string.autoriser, (dialogInterface, i) -> ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, 0))
+                    .setNegativeButton(R.string.quitter, (dialogInterface, i) -> finish())
                     .show();
             alertDialog.setCanceledOnTouchOutside(false);
         }
     }
-
 }

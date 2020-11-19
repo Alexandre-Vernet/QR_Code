@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="erreur">Erreur</string>
+    <string name="besoin_autorisation_camera">L\'application a besoin d\'accéder à la caméra</string>
+    <string name="autoriser">Autoriser</string>
+    <string name="quitter">Quitter</string>
+    <string name="ouvrir_lien">Ouvrir le lien ?</string>
+    <string name="oui">Oui</string>
+    <string name="non">Non</string>
+    <string name="resultat">Résultat</string>
+    <string name="ok">Ok</string>
+    <string name="application_n_a_pas_acces_camera">L\'application n\'a pas accès à la caméra</string>
+</resources>

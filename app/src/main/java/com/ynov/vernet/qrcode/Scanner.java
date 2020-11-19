@@ -47,14 +47,14 @@ public class Scanner extends AppCompatActivity {
                 // Afficher une boîte de dialogue
                 new AlertDialog.Builder(this)
                         .setIcon(android.R.drawable.ic_dialog_alert)
-                        .setTitle("Ouvrir le lien ?")
+                        .setTitle(R.string.ouvrir_lien)
                         .setMessage(result.getText())
-                        .setPositiveButton("Oui", (dialogInterface, i) -> {
+                        .setPositiveButton(R.string.oui, (dialogInterface, i) -> {
                             // Ouvrir le lien
                             Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(result.getText()));
                             startActivity(browserIntent);
                         })
-                        .setNegativeButton("Non", (dialogInterface, i) -> {
+                        .setNegativeButton(R.string.non, (dialogInterface, i) -> {
                             // Revenir au scanner
                             requestForCamera();
                         })
@@ -66,9 +66,9 @@ public class Scanner extends AppCompatActivity {
                 // Afficher une boîte de dialogue
                 new AlertDialog.Builder(this)
                         .setIcon(android.R.drawable.ic_dialog_alert)
-                        .setTitle("Résultat")
+                        .setTitle(R.string.resultat)
                         .setMessage(result.getText())
-                        .setPositiveButton("Ok", (dialogInterface, i) -> requestForCamera())
+                        .setPositiveButton(R.string.ok, (dialogInterface, i) -> requestForCamera())
                         .show();
             }
         }));
@@ -93,7 +93,7 @@ public class Scanner extends AppCompatActivity {
             //  Permission Camera refusée
             @Override
             public void onPermissionDenied(PermissionDeniedResponse response) {
-                Toast.makeText(Scanner.this, "L'application n'a pas accès à la caméra", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Scanner.this, R.string.application_n_a_pas_acces_camera, Toast.LENGTH_SHORT).show();
             }
 
             @Override
